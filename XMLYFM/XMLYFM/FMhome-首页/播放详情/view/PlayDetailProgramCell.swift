@@ -152,7 +152,7 @@ class PlayDetailProgramCell: UITableViewCell {
         }
     }
     
-    var playDetailTracksList:FMPlayDetailTracksListModel?{
+    var playDetailTracksList:list?{
         didSet{
             guard let model = playDetailTracksList else {return}
              self.titleLabel.text = model.title

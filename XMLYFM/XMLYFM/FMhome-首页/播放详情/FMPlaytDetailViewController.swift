@@ -23,7 +23,7 @@ class FMPlaytDetailViewController: UIViewController {
     
     public var  albumId: Int = 0
     // getff
-    lazy var heardViiew: FMPlayDetailView = {
+    private lazy var heardViiew: FMPlayDetailView = {
         
         let heardView = FMPlayDetailView.init(frame: CGRect(x: 0, y: 0, width: FMScreenWidth, height: 240))
         heardView.backgroundColor = UIColor.white
@@ -39,12 +39,12 @@ class FMPlaytDetailViewController: UIViewController {
         return [oneVc,twoVc, threeVc,fourVc]
     }()
     
-    lazy var titles: [String] = {
+    private lazy var titles: [String] = {
        
          return ["简介", "节目", "找相似","圈子"]
         
     }()
-    lazy var rightBarButton1: UIButton = {
+     private lazy var rightBarButton1: UIButton = {
         
         let button = UIButton.init(type: UIButtonType.custom)
         button.frame = CGRect(x:0, y:0, width:30, height: 30)
@@ -54,7 +54,7 @@ class FMPlaytDetailViewController: UIViewController {
         
     }()
     
-    lazy var rightBarButton2: UIButton = {
+    private lazy var rightBarButton2: UIButton = {
         
         let button = UIButton.init(type: UIButtonType.custom)
         button.frame = CGRect(x:0, y:0, width:30, height: 30)
@@ -63,7 +63,7 @@ class FMPlaytDetailViewController: UIViewController {
         return button
         
     }()
-    lazy var layout: LTLayout = {
+    private lazy var layout: LTLayout = {
         let layout = LTLayout()
         layout.isAverage = true
         layout.sliderWidth = 80
@@ -75,7 +75,9 @@ class FMPlaytDetailViewController: UIViewController {
         /* 更多属性设置请参考 LTLayout 中 public 属性说明 */
         return layout
     }()
-    
+    private var album: album?
+    private var user: user?
+    private var tracks: tracks?
     
     lazy var AdvancedManager: LTAdvancedManager = {
 //       let statusBarH = UIApplication.shared.statusBarFrame.size.height
@@ -125,8 +127,40 @@ class FMPlaytDetailViewController: UIViewController {
     func  setUpUI()  {
         
         view.addSubview(self.AdvancedManager)
+        
+        loadData()
+      
     }
     
+    
+    func loadData()  {
+        
+        FMPlayDetailProvider.request(FMPlayDetailAPI.playDetailData(albumId: self.albumId ,  20)) { result in
+            
+            if case let .success(response) = result {
+                //解析数据
+                let data = try? response.mapJSON()
+                let json = JSON(data!)
+                if let FMalbum = JSONDeserializer<album>.deserializeFrom(json: json["data"]["album"].description) {
+                    
+                    self.album = FMalbum
+                }
+                if let FMuser = JSONDeserializer<user>.deserializeFrom(json: json["data"]["user"].description) {
+                    
+                    self.user = FMuser
+                }
+                if let FMtrack = JSONDeserializer<tracks>.deserializeFrom(json: json["data"]["tracks"].description) { // 从字符串转换为对象实例
+                    self.tracks = FMtrack
+                     
+                }
+                // 给View复制
+                self.heardViiew.albumModel = self.album
+                self.oneVc.intorModel = self.album
+                self.oneVc.UserModel = self.user
+                self.twoVc.tracksModel = self.tracks
+            }
+        }
+    }
     
 
 }

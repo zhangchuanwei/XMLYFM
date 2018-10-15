@@ -12,6 +12,20 @@ import LTScrollView
 class FMjianjieTableViewController: UITableViewController , LTTableViewProtocal{
 
 
+    
+    var intorModel: album? {
+        didSet {
+            
+        }
+    }
+    
+    var UserModel : user? {
+        didSet {
+            
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.navBarBackgroundAlpha = 0

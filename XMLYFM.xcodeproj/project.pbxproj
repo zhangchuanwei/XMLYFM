@@ -18,6 +18,9 @@
 		0183894E216DDF3B00DA2DE3 /* FMHClassityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0183894C216DDF3B00DA2DE3 /* FMHClassityCell.xib */; };
 		01838950216DF98B00DA2DE3 /* FMRencommentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183894F216DF98B00DA2DE3 /* FMRencommentApi.swift */; };
 		01838952216DFB7100DA2DE3 /* FMHRencommentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01838951216DFB7100DA2DE3 /* FMHRencommentVM.swift */; };
+		018AD6F2217463AC0031BD42 /* FMpalydetailAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018AD6F1217463AC0031BD42 /* FMpalydetailAPI.swift */; };
+		018AD6F421746BE70031BD42 /* FMPlayDetailModle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018AD6F321746BE70031BD42 /* FMPlayDetailModle.swift */; };
+		018AD6F6217485F90031BD42 /* PlayDetailProgramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018AD6F5217485F80031BD42 /* PlayDetailProgramCell.swift */; };
 		01957277216C425A00E6866F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01957275216C425A00E6866F /* Main.storyboard */; };
 		01957279216C425E00E6866F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01957278216C425E00E6866F /* Assets.xcassets */; };
 		0195727C216C425E00E6866F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0195727A216C425E00E6866F /* LaunchScreen.storyboard */; };
@@ -67,6 +70,9 @@
 		0183894C216DDF3B00DA2DE3 /* FMHClassityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FMHClassityCell.xib; sourceTree = "<group>"; };
 		0183894F216DF98B00DA2DE3 /* FMRencommentApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRencommentApi.swift; sourceTree = "<group>"; };
 		01838951216DFB7100DA2DE3 /* FMHRencommentVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMHRencommentVM.swift; sourceTree = "<group>"; };
+		018AD6F1217463AC0031BD42 /* FMpalydetailAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMpalydetailAPI.swift; sourceTree = "<group>"; };
+		018AD6F321746BE70031BD42 /* FMPlayDetailModle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMPlayDetailModle.swift; sourceTree = "<group>"; };
+		018AD6F5217485F80031BD42 /* PlayDetailProgramCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayDetailProgramCell.swift; sourceTree = "<group>"; };
 		0195726E216C425A00E6866F /* XMLYFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMLYFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01957276216C425A00E6866F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01957278216C425E00E6866F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,6 +144,30 @@
 				017BD4A1216F3DA90076106A /* FMGussYouLikeCell.swift */,
 			);
 			path = "猜你喜欢";
+			sourceTree = "<group>";
+		};
+		018AD6EC2174635E0031BD42 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				018AD6F1217463AC0031BD42 /* FMpalydetailAPI.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		018AD6ED2174635F0031BD42 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				018AD6F321746BE70031BD42 /* FMPlayDetailModle.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		018AD6EE217463600031BD42 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				018AD6F5217485F80031BD42 /* PlayDetailProgramCell.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		01957265216C425900E6866F = {
@@ -407,6 +437,9 @@
 			children = (
 				01ACCE6C2170480C00E92DDD /* FMPlaytDetailViewController.swift */,
 				01ACCE6E217048FA00E92DDD /* FMPlayDetailView.swift */,
+				018AD6EE217463600031BD42 /* view */,
+				018AD6ED2174635F0031BD42 /* model */,
+				018AD6EC2174635E0031BD42 /* api */,
 				01ACCE70217049BE00E92DDD /* viewcontrollers */,
 			);
 			path = "播放详情";
@@ -601,6 +634,7 @@
 				017BD49B216F34C20076106A /* FMHRHeardCell.swift in Sources */,
 				0195729A216C466C00E6866F /* AppDelegate.swift in Sources */,
 				019572BF216C5DFB00E6866F /* FMHomeRecomendViewController.swift in Sources */,
+				018AD6F2217463AC0031BD42 /* FMpalydetailAPI.swift in Sources */,
 				017BD489216EEDC10076106A /* FMHRecommentModel.swift in Sources */,
 				01C4CC27216CB50D006B0A80 /* FMHClassityVM.swift in Sources */,
 				019572B3216C4F3400E6866F /* WRCycleScrollView.swift in Sources */,
@@ -613,6 +647,7 @@
 				01957294216C461B00E6866F /* FMPlayViewController.swift in Sources */,
 				01957292216C460B00E6866F /* FMListenViewController.swift in Sources */,
 				019572B4216C4F3400E6866F /* WRCycleCell.swift in Sources */,
+				018AD6F6217485F90031BD42 /* PlayDetailProgramCell.swift in Sources */,
 				01838950216DF98B00DA2DE3 /* FMRencommentApi.swift in Sources */,
 				01957298216C463200E6866F /* FMMineViewController.swift in Sources */,
 				019572A6216C4EE200E6866F /* YYIrregularityContentView.swift in Sources */,
@@ -622,6 +657,7 @@
 				019572A8216C4EF500E6866F /* YYNavigationController.swift in Sources */,
 				019572B1216C4F3400E6866F /* WRCustomNavigationBar.swift in Sources */,
 				01C4CC2B216CB557006B0A80 /* FMHClassityModel.swift in Sources */,
+				018AD6F421746BE70031BD42 /* FMPlayDetailModle.swift in Sources */,
 				017BD49A216F34C20076106A /* FMNewsViewCell.swift in Sources */,
 				019572C7216C5E5A00E6866F /* FMHbroadcastViewController.swift in Sources */,
 				019572C1216C5E1500E6866F /* FMHClassityViewController.swift in Sources */,
