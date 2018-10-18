@@ -88,6 +88,8 @@ extension FMHClassityViewController: UICollectionViewDataSource , UICollectionVi
         return viewModel.insetForSectionAt(section: section)
     }
     
+    
+    
     //最小 item 间距
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return viewModel.minimumInteritemSpacingForSectionAt(section: section)
@@ -113,5 +115,20 @@ extension FMHClassityViewController: UICollectionViewDataSource , UICollectionVi
         cell.itemModel = viewModel.classifyModel?[indexPath.section].itemList![indexPath.row]
         return cell
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        let categoryId = viewModel.classifyModel?[indexPath.section].itemList![indexPath.row].itemDetail?.categoryId
+        
+        let title = viewModel.classifyModel?[indexPath.section].itemList![indexPath.row].itemDetail?.title
+        
+        let vc = FMClassSubMenuViewController()
+        vc.title = title
+        vc.categoryId = categoryId ?? 0
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+        
+    }
 }

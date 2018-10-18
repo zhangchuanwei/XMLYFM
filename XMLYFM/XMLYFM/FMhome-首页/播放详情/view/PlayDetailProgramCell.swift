@@ -175,7 +175,7 @@ class PlayDetailProgramCell: UITableViewCell {
     
     var indexPath:IndexPath? {
         didSet {
-            let num:Int = (indexPath?.row)!
+            let num:Int = (indexPath?.row)! + 1 
             self.numLabel.text = "\(num)"
         }
     }

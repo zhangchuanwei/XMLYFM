@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = tab
         
         self.window?.makeKeyAndVisible()
-        print("hahahahahah")
+       
         
         return true
     }

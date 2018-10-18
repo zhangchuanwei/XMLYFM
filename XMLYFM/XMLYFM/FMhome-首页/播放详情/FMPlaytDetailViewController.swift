@@ -158,6 +158,7 @@ class FMPlaytDetailViewController: UIViewController {
                 self.oneVc.intorModel = self.album
                 self.oneVc.UserModel = self.user
                 self.twoVc.tracksModel = self.tracks
+                self.twoVc.AalbumID = self.albumId
             }
         }
     }
